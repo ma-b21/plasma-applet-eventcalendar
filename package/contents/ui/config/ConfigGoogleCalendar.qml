@@ -210,7 +210,7 @@ ConfigPage {
 			text: i18n("Tasks")
 
 			Image {
-				source: plasmoid.file("", "icons/google_tasks_96px.png")
+				source: plasmoid.file("", "icons/Google_Tasks_2021.svg")
 				smooth: true
 				anchors.leftMargin: parent.contentWidth + Kirigami.Units.smallSpacing
 				anchors.left: parent.left

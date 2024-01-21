@@ -241,7 +241,7 @@ LinkRect {
 						text: eventHangoutLink.text
 						color: eventItemInPast ? PlasmaCore.ColorScope.disabledTextColor : (eventItemInProgress ? inProgressColor : PlasmaCore.ColorScope.textColor)
 					}
-					icon.source: plasmoid.file("", "icons/hangouts.svg")
+					icon.source: plasmoid.file("", "icons/Hangouts_2018.svg")
 					onClicked: Qt.openUrlExternally(externalLink)
 					flat: eventItemInPast
 
