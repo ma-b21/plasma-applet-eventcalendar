@@ -2,19 +2,68 @@
 
 # Function to check if a command was successful
 check_command_success() {
-        if [ "$1" != "0" ]; then
-                echo "Error executing command: $2"
-                exit 1
-        fi
+    if [ "$1" != "0" ]; then
+        echo "Error executing command: $2"
+        exit 1
+    fi
 }
+
+# Function to install required packages
+install_requirements() {
+    # Determine the Linux distribution
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        DISTRO=$ID
+    elif type lsb_release >/dev/null 2>&1; then
+        DISTRO=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
+    else
+        DISTRO=$(uname -s)
+    fi
+
+    # Normalize distro names to lowercase
+    DISTRO=$(echo "$DISTRO" | tr '[:upper:]' '[:lower:]')
+
+    case "$DISTRO" in
+        "debian"|"ubuntu"|"kali"|"raspbian")
+            required_commands=("kreadconfig5" "kpackagetool5")
+            packages_to_install=("libkf5coreaddons-bin-dev" "kpackagetool5")
+            install_cmd="sudo apt-get update && sudo apt-get install -y"
+            ;;
+        "arch")
+            required_commands=("kreadconfig5" "kpackagetool5")
+            packages_to_install=("kcoreaddons" "kpackagetool5")
+            install_cmd="sudo pacman -S"
+            ;;
+        "fedora")
+            required_commands=("kreadconfig5" "kpackagetool5")
+            packages_to_install=("kf5-kcoreaddons" "kf5-kpackage")
+            install_cmd="sudo dnf install"
+            ;;
+        *)
+            echo "Unsupported distribution: $DISTRO"
+            return 1
+            ;;
+    esac
+
+    for i in "${!required_commands[@]}"; do
+        if ! command -v "${required_commands[$i]}" &> /dev/null; then
+            echo "${required_commands[$i]} is not installed. Attempting to install..."
+            $install_cmd "${packages_to_install[$i]}"
+            check_command_success "$?" "Failed to install ${packages_to_install[$i]}"
+        fi
+    done
+}
+
+# Install script requirements
+install_requirements
 
 # Parse arguments for restart option
 restartPlasmashell=false
 for arg in "$@"; do
-        case "$arg" in
-                -r|--restart) restartPlasmashell=true;;
-                *) ;;
-        esac
+    case "$arg" in
+        -r|--restart) restartPlasmashell=true;;
+        *) ;;
+    esac
 done
 
 # Determine if the package is already installed
@@ -25,21 +74,21 @@ isAlreadyInstalled=$?
 
 # Convert metadata.desktop to metadata.json
 if command -v desktoptojson &> /dev/null ; then
-        desktoptojson --serviceType="plasma-applet.desktop" -i "$PWD/package/metadata.desktop" -o "$PWD/package/metadata.json"
-        check_command_success "$?" "desktoptojson conversion failed"
-        sed -i '{s/ \{4\}/\t/g}' "$PWD/package/metadata.json" # Tabify metadata.json
+    desktoptojson --serviceType="plasma-applet.desktop" -i "$PWD/package/metadata.desktop" -o "$PWD/package/metadata.json"
+    check_command_success "$?" "desktoptojson conversion failed"
+    sed -i 's/ \{4\}/\t/g' "$PWD/package/metadata.json" # Tabify metadata.json
 fi
 
 # Install or update the package
 if [ "$isAlreadyInstalled" == "0" ]; then
-        kpackagetool5 -t "${packageServiceType}" -u package
-        restartPlasmashell=true
+    kpackagetool5 -t "${packageServiceType}" -u package
+    restartPlasmashell=true
 else
-        kpackagetool5 -t "${packageServiceType}" -i package
+    kpackagetool5 -t "${packageServiceType}" -i package
 fi
 
 # Restart Plasma shell if required
 if $restartPlasmashell; then
-        killall plasmashell
-        ( cd $HOME && kstart5 plasmashell )
+    killall plasmashell
+    ( cd $HOME && kstart5 plasmashell )
 fi
