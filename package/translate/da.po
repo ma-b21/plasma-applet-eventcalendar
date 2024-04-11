@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eventcalendar\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-eventcalendar\n"
-"POT-Creation-Date: 2023-08-18 10:16-0400\n"
+"POT-Creation-Date: 2022-03-22 18:16-0400\n"
 "PO-Revision-Date: 2019-05-04 00:48-0400\n"
 "Last-Translator: Chris Darnell <chris@cedeel.com>\n"
 "Language-Team: Chris Darnell <chris@cedeel.com>\n"
@@ -27,6 +27,7 @@ msgstr "Begivenhedskalender"
 msgid ""
 "Plasmoid for a calendar+agenda with weather that syncs to Google Calendar."
 msgstr ""
+"Plasmoid med kalender+agenda med vejr der synkronisere med Google Kalender"
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -34,7 +35,7 @@ msgstr "Generelt"
 
 #: ../contents/config/config.qml
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../contents/config/config.qml
 msgid "Timezones"
@@ -46,7 +47,7 @@ msgstr "Kalender"
 
 #: ../contents/config/config.qml
 msgid "Agenda"
-msgstr "Agenda"
+msgstr "Dagsplan"
 
 #: ../contents/config/config.qml
 msgid "Events"
@@ -119,29 +120,31 @@ msgstr "[Ingen kalendere]"
 
 #: ../contents/ui/calendars/GoogleCalendarManager.qml ../contents/ui/Logic.qml
 msgid "HTTP Error %1: %2"
-msgstr ""
+msgstr "HTTP Fejl %1: %2"
 
 #: ../contents/ui/calendars/GoogleCalendarManager.qml ../contents/ui/Logic.qml
 msgid "Could not connect"
-msgstr ""
+msgstr "Kunne ikke forbinde"
 
 #: ../contents/ui/calendars/GoogleCalendarManager.qml ../contents/ui/Logic.qml
 msgid "Will try again soon."
-msgstr ""
+msgstr "Vil forsøge igen snart."
 
 #: ../contents/ui/calendars/GoogleCalendarManager.qml
 #: ../contents/ui/config/ConfigGoogleCalendar.qml ../contents/ui/Logic.qml
 msgid ""
 "Widget has been updated. Please logout and login to Google Calendar again."
 msgstr ""
+"Dimsen er blevet opdateret. Log venligst ud og log ind på Google Kalender "
+"igen."
 
 #: ../contents/ui/calendars/GoogleCalendarManager.qml
 msgid "Too many web requests. Will try again soon."
-msgstr ""
+msgstr "For mange web-forespørgelser. Vil prøve igen snart."
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Show agenda"
-msgstr "Vis agenda"
+msgstr "Vis dagsplan"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Font Size:"
@@ -208,11 +211,11 @@ msgstr "Beskrivelse"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Hide 'All Day' text"
-msgstr ""
+msgstr "Skjul 'Heldags' tekst"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Google Hangouts link"
-msgstr "Google Hangouts-link"
+msgstr "Google Hangouts-henvisning"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Click Event:"
@@ -220,7 +223,7 @@ msgstr "Klik på begivenhed:"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Open Event In Browser"
-msgstr "Åbn begivenhed i din webbrowser"
+msgstr "Åbn begivenhed på nettet"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Show multi-day events:"
@@ -236,7 +239,7 @@ msgstr "Kun på den første og nuværende dag"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Remember selected calendar in New Event Form"
-msgstr "Husk den valgte kalender i pop-op 'Ny begivenhed'"
+msgstr "Husk den valgte kalender i 'Ny begivenhed'-formularen"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Current Month"
@@ -267,11 +270,11 @@ msgstr "Igang"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Day Spacing:"
-msgstr ""
+msgstr "Dag Afstand:"
 
 #: ../contents/ui/config/ConfigAgenda.qml
 msgid "Event Spacing:"
-msgstr ""
+msgstr "Begivenhed Afstand:"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Show calendar"
@@ -287,11 +290,11 @@ msgstr "Dobbeltklik på dato:"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "New Google Calendar Event (Web Browser)"
-msgstr ""
+msgstr "Ny Google Kalender begivenhed (på nettet)"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Do Nothing"
-msgstr ""
+msgstr "Gør intet"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 #: ../contents/ui/config/ConfigWeather.qml
@@ -300,7 +303,7 @@ msgstr "Stil"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Current Month Title:"
-msgstr ""
+msgstr "Titel, nuværende måned:"
 
 #: ../contents/ui/config/ConfigCalendar.qml ../contents/ui/MonthView.qml
 msgctxt "calendar title format for current month"
@@ -317,7 +320,7 @@ msgstr "Vis ugenumre"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Highlight Current Day / Week"
-msgstr ""
+msgstr "Fremhæv nuværende dag / uge"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "First day of week:"
@@ -329,7 +332,7 @@ msgstr "Standard"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Event Badge:"
-msgstr "Gebeurtenisteller:"
+msgstr "Begivenhedsemblem:"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Theme"
@@ -361,7 +364,7 @@ msgstr "Valgt:"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Solid Color (Highlight)"
-msgstr "Opak farve (markeren)"
+msgstr "Ensfarvet (fremhævet)"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Today:"
@@ -369,7 +372,7 @@ msgstr "I dag:"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Solid Color (Inverted)"
-msgstr "Opak farve (omvendt)"
+msgstr "Ensfarvet (omvendt)"
 
 #: ../contents/ui/config/ConfigCalendar.qml
 msgid "Big Number"
@@ -377,16 +380,16 @@ msgstr "Stort tal"
 
 #: ../contents/ui/config/ConfigEvents.qml
 msgid "Event Calendar Plugins"
-msgstr "Begivenhedskalender-plug-ins"
+msgstr "Begivenhedskalender udvidelser"
 
 #: ../contents/ui/config/ConfigEvents.qml
 msgid "Plasma Calendar Plugins"
-msgstr "Plasma-kalenderplug-ins"
+msgstr "Plasma-kalender udvidelser"
 
 #: ../contents/ui/config/ConfigEvents.qml
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Misc"
-msgstr "Blandet"
+msgstr "Misc"
 
 #: ../contents/ui/config/ConfigEvents.qml
 msgid "Refresh events every: "
@@ -404,7 +407,7 @@ msgstr "Notifikationer"
 
 #: ../contents/ui/config/ConfigEvents.qml
 msgid "Event Reminder"
-msgstr ""
+msgstr "Begivenhedspåmindelser"
 
 #: ../contents/ui/config/ConfigEvents.qml
 msgid "Event Starting"
@@ -412,14 +415,14 @@ msgstr "Begivenhed starter"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Widgets"
-msgstr "Widgets"
+msgstr "Dimsen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 "Show/Hide widgets above the calendar. Toggle Agenda/Calendar on their "
 "respective tabs."
 msgstr ""
-"Vis/skjul widgets over kalenderen. Skift agenda/kalender mellem deres "
+"Vis/skjul dimser over kalenderen. Skift dagsplan/kalender på deres respektive "
 "faneblade."
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -428,7 +431,7 @@ msgstr "Vejrgrafik"
 
 #: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/TimerModel.qml
 msgid "Timer"
-msgstr "Timer"
+msgstr "Nedtælling"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 #: ../contents/ui/lib/ConfigNotification.qml
@@ -445,7 +448,7 @@ msgstr "Tidsformat"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Time Format Documentation"
-msgstr ""
+msgstr "Dokumentation for tidsformat"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
@@ -475,7 +478,7 @@ msgstr "Fast højde til ur: "
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid " (0px = scale to fit)"
-msgstr " (0px = automatisk størrelse)"
+msgstr " (0px = skaleret til at passe)"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Line 1:"
@@ -483,7 +486,7 @@ msgstr "Linje 1:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Preset:"
-msgstr "Forindstilling:"
+msgstr "Forudindstillet:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Bold"
@@ -523,7 +526,7 @@ msgstr "Lydstyrke (med pop-op - qdbus)"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Desktop Widget: Show background"
-msgstr "Skrivebordswidget: vis baggrund"
+msgstr "Skrivebordsdims: vis baggrund"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Debugging"
@@ -531,7 +534,7 @@ msgstr "Fejlrettelse"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Debugging will log sensitive information to:"
-msgstr "Dette vil lagre følsomme informationer:"
+msgstr "Dette vil lagre følsomme informationer i:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Enable Debugging"
@@ -559,13 +562,13 @@ msgid ""
 "give permission to access your calendar, it will give you a code to paste "
 "below."
 msgstr ""
-"Besøg <a href=\"%1\">%2</a> (åbner i din  webbrowser). Når du er logget ind "
+"Besøg <a href=\"%1\">%2</a> (åbner på nettet). Når du er logget ind "
 "og giver tilladelse til, at tilgå din kalender, får du en kode som skal "
 "skrives nedenfor."
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopiér henvisning"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Enter code here (Eg: %1)"
@@ -590,7 +593,7 @@ msgstr "Genindlæs"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Tasks"
-msgstr ""
+msgstr "Opgaver"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Options"
@@ -598,19 +601,20 @@ msgstr "Indstillinger"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Event Click:"
-msgstr ""
+msgstr "Begivenhed, klik"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Open Web Event View"
-msgstr ""
+msgstr "Åben begivenhed på nettet"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Open Web Month View"
-msgstr ""
+msgstr "Åben måned på nettet"
 
 #: ../contents/ui/config/ConfigGoogleCalendar.qml
 msgid "Hide \"This event was added from Goals in Google Calendar\" description"
 msgstr ""
+"Skjul \"Denne begivenhed er tilføjet fra Mål i Google Kalender\" beskrivelsen"
 
 #: ../contents/ui/config/ConfigICal.qml
 msgid "Add Calendar"
@@ -634,11 +638,11 @@ msgstr "iCalendar (*.ics)"
 
 #: ../contents/ui/config/ConfigLayout.qml
 msgid "Calendar to the left of the Agenda (Two Columns)"
-msgstr ""
+msgstr "Kalender til venstre for dagsplan (to spalter)"
 
 #: ../contents/ui/config/ConfigLayout.qml
 msgid "Agenda below the Calendar (Single Column)"
-msgstr ""
+msgstr "Dagsplan under kalender (enkelt spalte)"
 
 #: ../contents/ui/config/ConfigTimezones.qml
 msgid "Tooltip"
@@ -670,7 +674,7 @@ msgstr "Find by"
 
 #: ../contents/ui/config/ConfigWeather.qml
 msgid "Eg: on-14"
-msgstr "Fx.: på-14"
+msgstr "i.e.: on-14"
 
 #: ../contents/ui/config/ConfigWeather.qml
 msgid "Settings"
@@ -682,7 +686,7 @@ msgstr "Genindlæs vejrudsigt hver: "
 
 #: ../contents/ui/config/ConfigWeather.qml
 msgid "Show next "
-msgstr "Næste"
+msgstr "Vis næste "
 
 #: ../contents/ui/config/ConfigWeather.qml
 msgid " hour"
@@ -772,7 +776,7 @@ msgstr "Åbn link"
 #: ../contents/ui/DateTimeSelector.qml
 msgctxt "event editor date format"
 msgid "d MMM, yyyy"
-msgstr ""
+msgstr "d MMM yyy"
 
 #: ../contents/ui/DurationSelector.qml
 msgid "to"
@@ -780,28 +784,28 @@ msgstr "til"
 
 #: ../contents/ui/EditEventForm.qml ../contents/ui/EditTaskForm.qml
 msgid "Event Title"
-msgstr ""
+msgstr "Navn på begivenhed"
 
 #: ../contents/ui/EditEventForm.qml
 msgid "Add location"
-msgstr ""
+msgstr "Tilføj lokation"
 
 #: ../contents/ui/EditEventForm.qml ../contents/ui/EditTaskForm.qml
 msgid "Add description"
-msgstr ""
+msgstr "Tilføj beskrivelse"
 
 #: ../contents/ui/EditEventForm.qml ../contents/ui/EditTaskForm.qml
 msgid "&Save"
-msgstr "Gem"
+msgstr "&Gem"
 
 #: ../contents/ui/EditEventForm.qml ../contents/ui/EditTaskForm.qml
 #: ../contents/ui/TimerInputView.qml
 msgid "&Cancel"
-msgstr "Annuler"
+msgstr "&Annuler"
 
 #: ../contents/ui/EditTaskForm.qml
 msgid "Add due date"
-msgstr ""
+msgstr "Tilføj forfaldsdato"
 
 #: ../contents/ui/lib/AppletVersion.qml
 msgid "<b>Version:</b> %1"
@@ -818,31 +822,31 @@ msgstr "Vælg en lydeffekt"
 
 #: ../contents/ui/lib/ConfigSound.qml
 msgid "Sound files (%1)"
-msgstr ""
+msgstr "Lydfiler (%1)"
 
 #: ../contents/ui/lib/ConfigSound.qml
 msgid "All files (%1)"
-msgstr ""
+msgstr "Alle filer (%1)"
 
 #: ../contents/ui/LocaleFuncs.js
 msgctxt "event time on the hour (24 hour clock)"
 msgid "h"
-msgstr "t"
+msgstr "h"
 
 #: ../contents/ui/LocaleFuncs.js
 msgctxt "event time (24 hour clock)"
 msgid "h:mm"
-msgstr "t.mm"
+msgstr "h:mm"
 
 #: ../contents/ui/LocaleFuncs.js
 msgctxt "event time on the hour (12 hour clock)"
 msgid "h AP"
-msgstr "t AP"
+msgstr "h AP"
 
 #: ../contents/ui/LocaleFuncs.js
 msgctxt "event time (12 hour clock)"
 msgid "h:mm AP"
-msgstr "t.mm AP"
+msgstr "h:mm AP"
 
 #: ../contents/ui/LocaleFuncs.js
 msgctxt "date (%1) with time (%2)"
@@ -873,11 +877,11 @@ msgstr "%1s"
 
 #: ../contents/ui/Logic.qml
 msgid "Weather API limit reached"
-msgstr ""
+msgstr "Vejrtjeneste API-grænse nået"
 
 #: ../contents/ui/Logic.qml
 msgid "Logged out of Google. Please login again."
-msgstr ""
+msgstr "Logget ud af Google. Log venligst på igen"
 
 #: ../contents/ui/main.qml
 msgid "Set Language…"
@@ -918,7 +922,7 @@ msgstr ""
 
 #: ../contents/ui/PopupView.qml
 msgid "Error fetching weather."
-msgstr ""
+msgstr "Fejl ved hentning af vejrdata"
 
 #: ../contents/ui/TimerInputView.qml
 msgid "&Start"
@@ -926,7 +930,7 @@ msgstr "&Start"
 
 #: ../contents/ui/TimerModel.qml
 msgid "Timer finished"
-msgstr "Timer udløbet"
+msgstr "Nedtælling udløbet"
 
 #: ../contents/ui/TimerModel.qml
 msgid "%1 has passed"
@@ -938,11 +942,11 @@ msgstr "Gentag"
 
 #: ../contents/ui/TimerView.qml
 msgid "Pause Timer"
-msgstr "Sæt timer på pause"
+msgstr "Sæt nedtælling på pause"
 
 #: ../contents/ui/TimerView.qml
 msgid "Start Timer"
-msgstr "Start timer"
+msgstr "Start nedtælling"
 
 #: ../contents/ui/TimerView.qml
 msgid "Scroll to add to duration"
@@ -954,7 +958,7 @@ msgstr "Lyd"
 
 #: ../contents/ui/TimerView.qml
 msgid "Set Timer"
-msgstr "Indstil timer"
+msgstr "Indstil nedtælling"
 
 #: ../contents/ui/UpcomingEvents.qml
 msgid "Events Starting"
@@ -962,7 +966,7 @@ msgstr "Begivenheder starter"
 
 #: ../contents/ui/UpcomingEvents.qml
 msgid "Events In Progress"
-msgstr "Begivenheder igang"
+msgstr "Begivenheder i gang"
 
 #: ../contents/ui/UpcomingEvents.qml
 msgid "Upcoming Events"
@@ -971,16 +975,16 @@ msgstr "Kommende begivenheder"
 #: ../contents/ui/UpcomingEvents.qml
 msgctxt "%1 = 15 minutes"
 msgid "Starting in %1"
-msgstr ""
+msgstr "Starter om %1"
 
 #~ msgid "Choose"
 #~ msgstr "Vælg"
 
 #~ msgid "Agenda to the left (Two Columns)"
-#~ msgstr "Vis agenda til venstre (to spalter)"
+#~ msgstr "Vis dagsplan til venstre (to spalter)"
 
 #~ msgid "Agenda above the month (Single Column)"
-#~ msgstr "Vis agenda over måneden (en spalte)"
+#~ msgstr "Vis dagsplan over måneden (en spalte)"
 
 #~ msgid "Edit description"
 #~ msgstr "Rediger beskrivelse"
