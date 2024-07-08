@@ -1,3 +1,7 @@
+Currently doesn't work on Plasma-6
+
+<hr>
+
 # Event Calendar Updated version
 This is an updated version that I modified for my own needs, with fix for Google Calender and quality of life improvements. 
 
