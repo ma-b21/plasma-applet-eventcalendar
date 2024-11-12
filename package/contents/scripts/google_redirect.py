@@ -21,6 +21,16 @@ def exchange_code_for_token(code):
         "redirect_uri": "http://127.0.0.1:{}/".format(listen_port),
         "grant_type": "authorization_code",
     }
+    proxies = {
+        'http': 'http://127.0.0.1:7890',
+        'https': 'http://127.0.0.1:7890',
+    }
+
+    # 使用urlopen时应用代理
+    proxy_handler = urllib.request.ProxyHandler(proxies)
+    opener = urllib.request.build_opener(proxy_handler)
+    urllib.request.install_opener(opener)
+
     data = urllib.parse.urlencode(token_params).encode("utf-8")
     req = urllib.request.Request("https://oauth2.googleapis.com/token", data)
     response = urllib.request.urlopen(req)

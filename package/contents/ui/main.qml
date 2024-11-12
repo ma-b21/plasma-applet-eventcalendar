@@ -18,7 +18,7 @@ Item {
 		showDebug: plasmoid.configuration.debugging
 		// showDebug: true
 	}
-
+    ExecUtil { id: execut }
 	ConfigMigration { id: configMigration }
 	AppletConfig { id: appletConfig }
 	NotificationManager { id: notificationManager }
@@ -239,7 +239,18 @@ Item {
 		])
 	}
 
+    function runPythonServer() {
+        console.log("Running python server")
+        var cmd = [
+			'python3',
+			plasmoid.file("", "scripts/listen_google_requests.py"),
+		]
+        execut.exec(cmd, null)
+    }
+
 	Component.onCompleted: {
+        runPythonServer()
+        console.log("Component.onCompleted")
 		plasmoid.setAction("clipboard", i18nd("plasma_applet_org.kde.plasma.digitalclock", "Copy to Clipboard"), "edit-copy")
 		DigitalClock.ClipboardMenu.setupMenu(plasmoid.action("clipboard"))
 
