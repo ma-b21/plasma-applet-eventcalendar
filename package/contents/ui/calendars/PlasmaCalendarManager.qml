@@ -23,8 +23,8 @@ CalendarManager {
 			return
 		}
 
-		logger.debug('calendarModel', calendarModel)
-		logger.debug('calendarModel.count', calendarModel.rowCount())
+		// logger.debug('calendarModel', calendarModel)
+		// logger.debug('calendarModel.count', calendarModel.rowCount())
 		var DataRole = Qt.UserRole + 1
 		for (var i = 0; i < calendarModel.rowCount(); i++) {
 			var index = calendarModel.index(i, 0)
@@ -338,7 +338,8 @@ CalendarManager {
 			logger.log('Could not parse a proper akonadiCalendarId=', akonadiCalendarId, ' from calendarId=', calendarId)
 			return
 		}
-		var dateString = Shared.dateString(date)
+		var dateString = Shared.localeDateString(date)
+        
 
 		// konsolekalendar --add --calendar 12 --summary "Summary" --date 2020-07-27 --time 22:00
 		var cmd = [
@@ -348,9 +349,25 @@ CalendarManager {
 			akonadiCalendarId,
 			'--date',
 			dateString,
-			'--summary',
-			text,
 		]
+        // 对text进行处理,用空格分割，前面的为时间，后面的为事件
+        var textArr = text.split(' ')
+        if (textArr.length > 1) {
+            var time = textArr[0]
+            var times = time.split('-')
+            cmd.push('--time')
+            if(times[0].length < 5) {
+                times[0] = '0' + times[0]
+            }
+            cmd.push(times[0])
+            if (times.length > 1) {
+                cmd.push('--end-time')
+                cmd.push(times[1])
+            } 
+        }
+        cmd.push('--summary')
+        cmd.push(textArr[textArr.length - 1])
+        console.log('cmd', cmd)
 		executable.exec(cmd, function(cmd, exitCode, exitStatus, stdout, stderr){
 			logger.debug('konsolekalendar.cmd', cmd)
 			logger.debug('konsolekalendar.exitCode', exitCode)
@@ -367,4 +384,30 @@ CalendarManager {
 			}
 		})
 	}
+
+    function deleteEvent(calendarId, eventId) {
+        console.log('deleteEvent', calendarId, eventId)
+        var cmd = [
+            'konsolekalendar',
+            '--delete',
+            '--uid',
+            eventId
+        ]
+        console.log('delete cmd', cmd)
+        executable.exec(cmd, function(cmd, exitCode, exitStatus, stdout, stderr){
+            logger.debug('konsolekalendar.cmd', cmd)
+            logger.debug('konsolekalendar.exitCode', exitCode)
+            logger.debug('konsolekalendar.exitStatus', exitStatus)
+            logger.debug('konsolekalendar.stdout', stdout)
+            logger.debug('konsolekalendar.stderr', stderr)
+
+            if (exitCode == 0) {
+                // It takes a few secs for PIM Events to sync with the PlasmaCalendar API.
+                // refresh calls deferredUpdate which is a 200ms delay which seems to work.
+                refresh()
+            } else {
+                // Error
+            }
+        })
+    }
 }
